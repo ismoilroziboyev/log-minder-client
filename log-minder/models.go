@@ -1,4 +1,4 @@
-package main
+package logminder
 
 import (
 	"time"

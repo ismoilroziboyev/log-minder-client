@@ -1,4 +1,4 @@
-package main
+package logminder
 
 type config struct {
 	addr     string

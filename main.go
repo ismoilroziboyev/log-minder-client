@@ -1,15 +1,7 @@
 package main
 
-import (
-	"context"
-	"fmt"
-)
-
-type LogMinderClient interface {
-	WriteLog(ctx context.Context, payload *WriteLogPayload) error
-	RetreiveLogs(ctx context.Context, payload *RetreiveLogsFilter) (*RetreiveLogsResponse, error)
-}
+import "fmt"
 
 func main() {
-	fmt.Println("hello world!")
+	fmt.Println("Hello Log-Minder!")
 }
