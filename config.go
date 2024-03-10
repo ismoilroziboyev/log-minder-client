@@ -7,11 +7,16 @@ type config struct {
 	debug    bool
 }
 
-func NewConfig(addr, username, password string, debug bool) *config {
+func NewConfig(addr, username, password string, debug bool) (*config, error) {
+
+	if addr == "" {
+		return nil, ErrInvalidAddress
+	}
+
 	return &config{
 		addr:     addr,
 		username: username,
 		password: password,
 		debug:    debug,
-	}
+	}, nil
 }
