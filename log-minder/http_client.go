@@ -53,14 +53,16 @@ func (l *httplogminder) RetreiveLogs(ctx context.Context, payload *RetreiveLogsF
 	var resp RetreiveLogsResponse
 
 	res, err := l.client.R().SetContext(ctx).SetResult(&resp).SetQueryParams(map[string]string{
-		"limit":       fmt.Sprintf("%d", payload.Limit),
-		"offset":      fmt.Sprintf("%d", payload.Offset),
-		"search":      payload.Search,
-		"user_id":     payload.UserID,
-		"user_role":   payload.UserRole,
-		"from":        payload.FromDate.Format("2006-01-02"),
-		"to":          payload.ToDate.Format("2006-01-02"),
-		"action_type": payload.ActionType,
+		"limit":          fmt.Sprintf("%d", payload.Limit),
+		"offset":         fmt.Sprintf("%d", payload.Offset),
+		"search":         payload.Search,
+		"user_id":        payload.UserID,
+		"user_role":      payload.UserRole,
+		"from":           payload.FromDate.Format("2006-01-02"),
+		"to":             payload.ToDate.Format("2006-01-02"),
+		"action_type":    payload.ActionType,
+		"action_details": payload.ActionDetails,
+		"user_details":   payload.UserDetails,
 	}).Get("/v1/logs")
 
 	if err != nil {

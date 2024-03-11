@@ -23,14 +23,16 @@ type WriteLogPayload struct {
 }
 
 type RetreiveLogsFilter struct {
-	Limit      int32     `json:"limit" form:"limit"`
-	Offset     int32     `json:"offset" form:"offset"`
-	Search     string    `json:"search" form:"search"`
-	UserID     string    `json:"user_id" form:"user_id"`
-	ActionType string    `json:"action_type" form:"action_type"`
-	UserRole   string    `json:"user_role" form:"user_role"`
-	FromDate   time.Time `json:"from_date"`
-	ToDate     time.Time `json:"to_date"`
+	Limit         int32     `json:"limit" form:"limit"`
+	Offset        int32     `json:"offset" form:"offset"`
+	Search        string    `json:"search" form:"search"`
+	UserID        string    `json:"user_id" form:"user_id"`
+	ActionType    string    `json:"action_type" form:"action_type"`
+	UserRole      string    `json:"user_role" form:"user_role"`
+	UserDetails   string    `json:"user_details" form:"user_details"`
+	ActionDetails string    `json:"action_details" form:"action_details"`
+	FromDate      time.Time `json:"from_date"`
+	ToDate        time.Time `json:"to_date"`
 }
 
 type Log struct {
