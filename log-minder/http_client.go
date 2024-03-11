@@ -52,7 +52,7 @@ func (l *httplogminder) RetreiveLogs(ctx context.Context, payload *RetreiveLogsF
 
 	var resp RetreiveLogsResponse
 
-	res, err := l.client.R().SetResult(&resp).SetQueryParams(map[string]string{
+	res, err := l.client.R().SetContext(ctx).SetResult(&resp).SetQueryParams(map[string]string{
 		"limit":       fmt.Sprintf("%d", payload.Limit),
 		"offset":      fmt.Sprintf("%d", payload.Offset),
 		"search":      payload.Search,
